@@ -1,8 +1,8 @@
 -- CREATE DATABASE db_upxII;
 USE db_upxII;
 
--- DROP FUNCTION get_noserie_from_id;
-CREATE FUNCTION get_device_id (
+-- DROP FUNCTION get_dispositivo_id;
+CREATE FUNCTION get_dispositivo_id (
 	dispositivo_noserie_in INT
 ) RETURNS INT DETERMINISTIC
 RETURN (
