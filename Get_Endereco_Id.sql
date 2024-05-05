@@ -13,7 +13,7 @@ RETURN (
 	SELECT Endereco_Id FROM tbl_enderecos
 		WHERE Endereco_Rua = endereco_rua_in
 		AND Endereco_No = endereco_no_in
-		AND Endereco_Bairo = endereco_bairro_in
+		AND Endereco_Bairro = endereco_bairro_in
 		AND Endereco_CEP = endereco_cep_in
 		AND Endereco_Complemento = endereco_complemento_in
 	);
