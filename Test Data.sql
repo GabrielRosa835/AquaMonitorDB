@@ -1,13 +1,17 @@
 -- CREATE DATABASE db_upxII;
 USE db_upxII;
 
+/*	Data premade for testing. 
+	It may probably suffice any testing needs.
+*/
+
 TRUNCATE TABLE tbl_clientes;
 TRUNCATE TABLE tbl_dispositivos;
 TRUNCATE TABLE tbl_enderecos;
 TRUNCATE TABLE tbl_cliente_endereco;
 TRUNCATE TABLE tbl_endereco_dispositivo;
 
-/*
+/*	Base insertions for when there's no insert procedure
 INSERT INTO tbl_clientes VALUES 
 (NULL, 'Daniela Ohatina', '123.456.789-01', '(15) 91234-5678'),
 (NULL, 'Gabriela Rosada', '234.567.890-12', '(15) 98765-4321'),
@@ -78,14 +82,16 @@ CALL insert_dispositivo(
     	NULL
 );
 
-SELECT * FROM vw_relacionamentos_raw;
+SELECT * FROM vw_relacionamentos;
+
+CALL delete_cliente(1);
+CALL delete_endereco(3);
+CALL delete_dispositivo(5);
+
 SELECT * FROM vw_relacionamentos;
 SELECT * FROM vw_clientes;
 SELECT * FROM vw_enderecos;
 SELECT * FROM vw_dispositivos;
-
-SELECT * FROM vw_clientes_raw;
-SELECT * FROM vw_enderecos_raw;
-SELECT * FROM vw_dispositivos_raw;
-SELECT * FROM vw_cliente_endereco_raw;
-SELECT * FROM vw_endereco_dispositivo_raw;
+SELECT * FROM vw_delete_logs_cli;
+SELECT * FROM vw_delete_logs_end;
+SELECT * FROM vw_delete_logs_dis;
