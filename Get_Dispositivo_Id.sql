@@ -1,6 +1,9 @@
 -- CREATE DATABASE db_upxII;
 USE db_upxII;
 
+/*	Function wich retrives the device's id from its registry contents.
+*/
+
 -- DROP FUNCTION get_dispositivo_id;
 CREATE FUNCTION get_dispositivo_id (
 	dispositivo_noserie_in INT
