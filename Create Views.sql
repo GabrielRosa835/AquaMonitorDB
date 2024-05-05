@@ -1,6 +1,12 @@
 -- CREATE DATABASE db_upxII;
 USE db_upxII;
 
+CREATE OR REPLACE VIEW vw_clientes_raw AS SELECT * FROM tbl_clientes;
+CREATE OR REPLACE VIEW vw_enderecos_raw AS SELECT * FROM tbl_enderecos;
+CREATE OR REPLACE VIEW vw_dispositivos_raw AS SELECT * FROM tbl_dispositivos;
+CREATE OR REPLACE VIEW vw_cliente_endereco_raw AS SELECT * FROM tbl_cliente_endereco;
+CREATE OR REPLACE VIEW vw_endereco_dispositivo_raw AS SELECT * FROM tbl_endereco_dispositivo;
+
 CREATE OR REPLACE VIEW vw_relacionamentos_raw AS 
 	SELECT 
 		tbl_cliente_endereco.Cliente_Id AS 'Id Cliente',
@@ -26,6 +32,30 @@ CREATE OR REPLACE VIEW vw_relacionamentos AS
 		ON tbl_enderecos.Endereco_Id = tbl_endereco_dispositivo.Endereco_Id
 	JOIN tbl_dispositivos
 		ON tbl_endereco_dispositivo.Dispositivo_Id = tbl_dispositivos.Dispositivo_Id
+	ORDER BY Cliente_Nome
+;
+
+CREATE OR REPLACE VIEW vw_cliente_dispositivo_raw AS
+	SELECT 
+		tbl_cliente_endereco.Cliente_Id AS 'Id Cliente',
+        tbl_endereco_dispositivo.Dispositivo_Id AS 'Id Dispositivo'
+	FROM tbl_cliente_endereco
+	JOIN tbl_endereco_dispositivo
+		ON tbl_cliente_endereco.Endereco_Id = tbl_endereco_dispositivo.Endereco_Id
+	ORDER BY Cliente_Id
+;
+
+CREATE OR REPLACE VIEW vw_cliente_dispositivo AS
+	SELECT 
+		tbl_clientes.Cliente_Nome AS 'Cliente',
+        tbl_dispositivos.Dispositivo_NoSerie AS 'Número de Série'
+	FROM tbl_dispositivos
+    JOIN tbl_endereco_dispositivo
+		ON tbl_dispositivos.Dispositivo_Id = tbl_endereco_dispositivo.Dispositivo_Id
+	JOIN tbl_cliente_endereco
+		ON tbl_endereco_dispositivo.Endereco_Id = tbl_cliente_endereco.Endereco_Id
+	JOIN tbl_clientes
+		ON tbl_cliente_endereco.Cliente_Id = tbl_clientes.Cliente_Id
 	ORDER BY Cliente_Nome
 ;
 
@@ -68,6 +98,4 @@ CREATE OR REPLACE VIEW vw_dispositivos AS
 	JOIN tbl_clientes
 		ON tbl_cliente_endereco.Cliente_Id = tbl_clientes.Cliente_Id
 	ORDER BY Cliente_Nome
-;
-        
-        
+;        
