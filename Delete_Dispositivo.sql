@@ -8,7 +8,6 @@ CREATE PROCEDURE delete_dispositivo(
 )
 BEGIN 
 	DELETE FROM tbl_dispositivos WHERE Dispositivo_Id = dispositivo_id_in;
-    DELETE FROM tbl_cliente_dispositivo WHERE Dispositivo_Id = dispositivo_id_in;
-    DELETE FROM tbl_endereco_dispositivo WHERE Dispositivo_Id = dispositivo_id_in;
+    	DELETE FROM tbl_endereco_dispositivo WHERE Dispositivo_Id = dispositivo_id_in;
 END $
 DELIMITER ;
