@@ -37,9 +37,3 @@ CREATE TABLE tbl_endereco_dispositivo (
     Endereco_Id INT UNIQUE REFERENCES tbl_enderecos (Endereco_Id),
     Dispositivo_Id INT REFERENCES tbl_dispositivos (Dispositivo_Id)
 );
-
--- DROP TABLE tbl_cliente_dispositivo;
-CREATE TABLE tbl_cliente_dispositivo (
-    Cliente_Id INT REFERENCES tbl_clientes (Cliente_Id),
-    Dispositivo_Id INT REFERENCES tbl_dispositivos (Dispositivo_Id)
-);
