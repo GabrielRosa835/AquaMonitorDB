@@ -1,12 +1,19 @@
 -- CREATE DATABASE db_upxII;
 USE db_upxII;
 
+-- Creating "raw" VIEWs just for testing purposes
 CREATE OR REPLACE VIEW vw_clientes_raw AS SELECT * FROM tbl_clientes;
 CREATE OR REPLACE VIEW vw_enderecos_raw AS SELECT * FROM tbl_enderecos;
 CREATE OR REPLACE VIEW vw_dispositivos_raw AS SELECT * FROM tbl_dispositivos;
 CREATE OR REPLACE VIEW vw_cliente_endereco_raw AS SELECT * FROM tbl_cliente_endereco;
 CREATE OR REPLACE VIEW vw_endereco_dispositivo_raw AS SELECT * FROM tbl_endereco_dispositivo;
 
+-- Creating the log deletion VIEWs
+CREATE OR REPLACE VIEW vw_delete_logs_cli AS SELECT * FROM tbl_delete_logs_cli;
+CREATE OR REPLACE VIEW vw_delete_logs_end AS SELECT * FROM tbl_delete_logs_end;
+CREATE OR REPLACE VIEW vw_delete_logs_dis AS SELECT * FROM tbl_delete_logs_dis;
+
+-- Creating more complex VIEWs
 CREATE OR REPLACE VIEW vw_relacionamentos_raw AS 
 	SELECT 
 		tbl_cliente_endereco.Cliente_Id AS 'Id Cliente',
