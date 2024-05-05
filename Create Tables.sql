@@ -23,17 +23,21 @@ CREATE TABLE tbl_enderecos (
 CREATE TABLE tbl_dispositivos (
     Dispositivo_Id INT PRIMARY KEY AUTO_INCREMENT,
     Dispositivo_NoSerie INT UNIQUE NOT NULL,
-    Dispositivo_FluxoTotalDeAgua FLOAT -- Adicionado extra (Faz sentido incluir)
+    Dispositivo_FluxoTotalDeAgua FLOAT -- Extra (variável operacional)
 );
+
+-- Relational tables between entities
 
 -- DROP TABLE tbl_cliente_endereco;
 CREATE TABLE tbl_cliente_endereco (
     Cliente_Id INT REFERENCES tbl_clientes (Cliente_Id),
-    Endereco_Id INT REFERENCES tbl_enderecos (Endereco_Id)
+    Endereco_Id INT REFERENCES tbl_enderecos (Endereco_Id),
+    PRIMARY KEY (Cliente_Id, Endereco_Id)
 );
 
 -- DROP TABLE tbl_endereco_dispositivo;
 CREATE TABLE tbl_endereco_dispositivo (
-    Endereco_Id INT UNIQUE REFERENCES tbl_enderecos (Endereco_Id),
-    Dispositivo_Id INT REFERENCES tbl_dispositivos (Dispositivo_Id)
+    Endereco_Id INT REFERENCES tbl_enderecos (Endereco_Id),
+    Dispositivo_Id INT REFERENCES tbl_dispositivos (Dispositivo_Id),
+    PRIMARY KEY (Endereco_Id, Dispositivo_Id)
 );
