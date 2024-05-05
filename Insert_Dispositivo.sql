@@ -1,6 +1,11 @@
 -- CREATE DATABASE db_upxII;
 USE db_upxII;
 
+/* 	Encapsulation for devices insertion.
+	It automatically inserts adress-device relations
+    	into its specific table.
+*/
+
 -- DROP PROCEDURE insert_dispositivo;
 DELIMITER $
 CREATE PROCEDURE insert_dispositivo(
@@ -8,6 +13,7 @@ CREATE PROCEDURE insert_dispositivo(
     	dispositivo_noserie_in INT
 )
 BEGIN
+	-- Generates a random series number if none are entered
 	IF dispositivo_noserie_in IS NULL 
 		THEN SET dispositivo_noserie_in = create_no_serie(); 
     	END IF;
