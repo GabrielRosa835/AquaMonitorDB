@@ -6,7 +6,7 @@ DELIMITER $
 CREATE FUNCTION create_no_serie() RETURNS INT DETERMINISTIC
 BEGIN
 	DECLARE new_no_serie INT DEFAULT -1;
-	SET new_no_serie = RAND() * 90000 + 10000;
+	SET new_no_serie = RAND() * 99999 + 1;
 	
 	WHILE 
 		(SELECT Dispositivo_NoSerie FROM tbl_dispositivos WHERE Dispositivo_NoSerie = new_no_serie) IS NOT NULL
