@@ -3,7 +3,7 @@ USE db_upxII;
 
 -- DROP FUNCTION get_endereco_id;
 CREATE FUNCTION get_endereco_id(
-	endereco_rua_in VARCHAR(50),
+    endereco_rua_in VARCHAR(50),
     endereco_no_in INT,
     endereco_bairro_in VARCHAR(50),
     endereco_cep_in INT,
