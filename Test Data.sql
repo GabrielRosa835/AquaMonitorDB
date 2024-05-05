@@ -58,29 +58,24 @@ CALL insert_endereco(
 );
 
 CALL insert_dispositivo(
-	get_cliente_id('Daniela Ohatina', '123.456.789-01', '(15) 91234-5678'),
-    get_endereco_id('Rua Dos Professores', 52, 'Facens', 12345678, 'Prédio L'),
-    NULL
+    	get_endereco_id('Rua Dos Professores', 52, 'Facens', 12345678, 'Prédio L'),
+    	NULL
 );
 CALL insert_dispositivo(
-	get_cliente_id('Daniela Ohatina', '123.456.789-01', '(15) 91234-5678'),
-    get_endereco_id('Rua Dos Mestres', 184, 'Sabe Muito', 69696969, 'Casa Do Conhecimento'),
-    NULL
+   	get_endereco_id('Rua Dos Mestres', 184, 'Sabe Muito', 69696969, 'Casa Do Conhecimento'),
+    	NULL
 );
 CALL insert_dispositivo(
-	get_cliente_id('Thomas Água', '345.678.901-23', '(23) 5462-8731'),
-    get_endereco_id('Rua Dos Militares', 20, 'Facens', 17291729, 'Academia'),
-    NULL
+    	get_endereco_id('Rua Dos Militares', 20, 'Facens', 17291729, 'Academia'),
+    	NULL
 );
 CALL insert_dispositivo(
-	get_cliente_id('Gabriela Rosada', '234.567.890-12', '(15) 98765-4321'),
-    get_endereco_id('Rua Dos Alunos', 19, 'Facens', 56781234, 'Cantina'),
-    NULL
+    	get_endereco_id('Rua Dos Alunos', 19, 'Facens', 56781234, 'Cantina'),
+    	NULL
 );
 CALL insert_dispositivo(
-	get_cliente_id('Thomas Água', '345.678.901-23', '(23) 5462-8731'),
-    get_endereco_id('Rua Dos Programadores', 37, 'Roblox', 42684268, 'NA'),
-    NULL
+    	get_endereco_id('Rua Dos Programadores', 37, 'Roblox', 42684268, 'NA'),
+    	NULL
 );
 
 SELECT * FROM vw_relacionamentos_raw;
@@ -88,3 +83,9 @@ SELECT * FROM vw_relacionamentos;
 SELECT * FROM vw_clientes;
 SELECT * FROM vw_enderecos;
 SELECT * FROM vw_dispositivos;
+
+SELECT * FROM vw_clientes_raw;
+SELECT * FROM vw_enderecos_raw;
+SELECT * FROM vw_dispositivos_raw;
+SELECT * FROM vw_cliente_endereco_raw;
+SELECT * FROM vw_endereco_dispositivo_raw;
