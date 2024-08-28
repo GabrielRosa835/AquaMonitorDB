@@ -20,9 +20,9 @@ To add the cherry on top, I added a log system for when object data is deleted f
 ![Modelo lógico](https://github.com/GabrielRosa835/Trabalho-UPXII-Banco_de_Dados/assets/150252238/b7ae4d1a-ce7c-4226-ac66-b1170ca19e5f)
 
 ## Projects Colaborators
-Myself  
-@itsguisouza  
-@Weslethai  
-@Lumarcone  
-@milenabarcia  
-@ThomasJanoski  
+[Gabriel Rosa da Silva (Myself)](https://github.com/GabrielRosa835)  
+[Guilherme Augusto Estefani Souza](https://github.com/itsguisouza)  
+[Lucas Marcone Oliveira Freitas](https://github.com/Lumarcone)  
+[Milena Mazzei Barcia](https://github.com/milenabarcia)  
+[Thomas Soares da Silveira](https://github.com/ThomasJanoski)  
+[Wesley Matheus Silva](https://github.com/Weslethai)  
